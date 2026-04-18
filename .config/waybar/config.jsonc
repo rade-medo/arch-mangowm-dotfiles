@@ -1,0 +1,59 @@
+// Waybar config — ~/.config/waybar/config.jsonc
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+  "spacing": 8,
+  "modules-left": ["clock"],
+  "modules-center": ["mango/workspaces"],
+  "modules-right": ["pulseaudio", "backlight", "battery", "network", "tray"],
+
+  "clock": {
+    "format": "  {:%a %d %b  %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "mango/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "active": "",
+      "default": ""
+    }
+  },
+
+  "pulseaudio": {
+    "format": "  {volume}%",
+    "format-muted": "  muted",
+    "on-click": "pavucontrol"
+  },
+
+  "backlight": {
+    "format": "󰋀  {percent}%"
+  },
+
+  "battery": {
+    "format": "  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "states": {
+      "warning": 30,
+      "critical": 10
+    }
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "  eth",
+    "format-disconnected": "  offline",
+    "tooltip-format": "{ifname}: {ipaddr}"
+  },
+
+  "tray": {
+    "spacing": 10
+  }
+}
