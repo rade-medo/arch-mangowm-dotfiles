@@ -1,0 +1,62 @@
+/* Waybar style — ~/.config/waybar/style.css */
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(17, 19, 24, 0.95);
+  color: #d8dee9;
+}
+
+#clock,
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#tray,
+#workspaces {
+  padding: 0 10px;
+  margin: 4px 0;
+}
+
+/* Workspaces */
+#workspaces button {
+  padding: 0 8px;
+  color: #4c566a;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+  color: #d8dee9;
+  background: #2e3440;
+}
+
+#workspaces button.active {
+  color: #eceff4;
+  background: #3b4252;
+}
+
+#workspaces button.urgent {
+  color: #bf616a;
+}
+
+/* Battery states */
+#battery.warning {
+  color: #ebcb8b;
+}
+
+#battery.critical {
+  color: #bf616a;
+  animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to   { opacity: 0.3; }
+}
